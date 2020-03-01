@@ -1,0 +1,21 @@
+language: java
+jdk: oraclejdk12
+
+services:
+    - mysql
+
+before_install:
+  - sudo mysqladmin -u root password root
+  - mysql -u root -proot -e 'CREATE DATABASE IF NOT EXISTS security_rest_developer_api;'
+  - mysql -u root -proot -e 'CREATE DATABASE IF NOT EXISTS test_security_rest_developer_api;'
+
+cache:
+  directories:
+  - $HOME/.m2
+
+  notifications:
+    email:
+      recipients:
+        - andranik.stav@mail.ru
+      on_success: never # default: change
+      on_failure: always # default: always

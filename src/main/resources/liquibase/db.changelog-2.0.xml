@@ -1,0 +1,68 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="1.0.0" author="Andranik.Mikhailyan">
+        <insert tableName="roles">
+            <column name="name" value="ROLE_ADMIN"/>
+        </insert>
+    </changeSet>
+    <changeSet id="1.0.1" author="Andranik.Mikhailyan">
+        <insert tableName="roles">
+            <column name="name" value="ROLE_MODERATOR"/>
+        </insert>
+    </changeSet>
+    <changeSet id="1.0.2" author="Andranik.Mikhailyan">
+        <insert tableName="roles">
+            <column name="name" value="ROLE_USER"/>
+        </insert>
+    </changeSet>
+    <changeSet id="1.0.3" author="Andranik.Mikhailyan">
+        <insert tableName="users">
+            <column name="username" value="admin"/>
+            <column name="password" value="$2a$04$U0UhOW8X7CF.iRGa4Vli8ucwq/eyYD1Q4RCxdvAsRoWiQIC5PqU.W"/>
+            <column name="first_name" value="Admin"/>
+            <column name="last_name" value="Admin"/>
+        </insert>
+    </changeSet>
+    <changeSet id="1.0.4" author="Andranik.Mikhailyan">
+        <insert tableName="users">
+            <column name="username" value="moderator"/>
+            <column name="password" value="$2a$04$aTWP9Plgg.gRpEt5Hsi/HOIfRR9xP6Na1I7lm/h18MUZYsu6MqlUy"/>
+            <column name="first_name" value="Moderator"/>
+            <column name="last_name" value="Moderator"/>
+        </insert>
+    </changeSet>
+    <changeSet id="1.0.5" author="Andranik.Mikhailyan">
+        <insert tableName="user_roles">
+            <column name="user_id" value="1"/>
+            <column name="role_id" value="1"/>
+        </insert>
+    </changeSet>
+    <changeSet id="1.0.6" author="Andranik.Mikhailyan">
+        <insert tableName="user_roles">
+            <column name="user_id" value="1"/>
+            <column name="role_id" value="2"/>
+        </insert>
+    </changeSet>
+    <changeSet id="1.0.7" author="Andranik.Mikhailyan">
+        <insert tableName="user_roles">
+            <column name="user_id" value="1"/>
+            <column name="role_id" value="3"/>
+        </insert>
+    </changeSet>
+    <changeSet id="1.0.8" author="Andranik.Mikhailyan">
+        <insert tableName="user_roles">
+            <column name="user_id" value="2"/>
+            <column name="role_id" value="2"/>
+        </insert>
+    </changeSet>
+    <changeSet id="1.0.9" author="Andranik.Mikhailyan">
+        <insert tableName="user_roles">
+            <column name="user_id" value="2"/>
+            <column name="role_id" value="3"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>
