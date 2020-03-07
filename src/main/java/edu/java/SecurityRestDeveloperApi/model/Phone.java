@@ -29,7 +29,6 @@ public class Phone extends BaseEntity {
                 "phoneNumber='" + phoneNumber + '\'' +
                 ", verificationCode=" + verificationCode +
                 ", verificationStatus=" + verificationStatus +
-                ", userId=" + user.getId() +
                 '}';
     }
 }

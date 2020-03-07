@@ -27,7 +27,7 @@ public class SkillModeratorRestControllerV1 {
     @GetMapping
     public ResponseEntity getAll() {
         List<Skill> skills = skillService.getAll();
-        if (skills == null) {
+        if (skills.isEmpty()) {
             return ResponseEntity.noContent().build();
         }
         return ResponseEntity.ok(skills);

@@ -24,7 +24,7 @@ public class DeveloperUserRestControllerV1 {
     @GetMapping
     public ResponseEntity getAll() {
         List<Developer> developers = developerService.getAll();
-        if (developers == null) {
+        if (developers.isEmpty()) {
             return ResponseEntity.noContent().build();
         }
         List<UserDeveloperDto> developersDto = developers.stream().map(UserDeveloperDto::toDeveloperDto).collect(Collectors.toList());

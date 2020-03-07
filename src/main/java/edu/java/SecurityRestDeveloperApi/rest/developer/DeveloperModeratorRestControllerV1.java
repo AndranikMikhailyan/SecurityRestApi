@@ -24,7 +24,7 @@ public class DeveloperModeratorRestControllerV1 {
     @GetMapping
     public ResponseEntity getAll() {
         List<Developer> developers = developerService.getAll();
-        if (developers == null) {
+        if (developers.isEmpty()) {
             return ResponseEntity.noContent().build();
         }
         return ResponseEntity.ok(developers);

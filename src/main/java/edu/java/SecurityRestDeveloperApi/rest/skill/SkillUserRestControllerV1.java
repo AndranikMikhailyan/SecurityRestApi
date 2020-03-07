@@ -27,7 +27,7 @@ public class SkillUserRestControllerV1 {
     @GetMapping
     public ResponseEntity getAll() {
         List<Skill> skills = skillService.getAll();
-        if (skills == null) {
+        if (skills.isEmpty()) {
             return ResponseEntity.noContent().build();
         }
         List<UserSkillDto> skillsDto = skills.stream().map(UserSkillDto::toUserDto).collect(Collectors.toList());

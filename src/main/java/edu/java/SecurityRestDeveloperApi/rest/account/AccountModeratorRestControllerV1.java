@@ -24,7 +24,7 @@ public class AccountModeratorRestControllerV1 {
     @GetMapping
     public ResponseEntity getAll() {
         List<Account> accounts = accountService.getAll();
-        if (accounts == null) {
+        if (accounts.isEmpty()) {
             return ResponseEntity.noContent().build();
         }
         return ResponseEntity.ok(accounts);

@@ -26,7 +26,7 @@ public class AdminUserRestControllerV1 {
     @GetMapping
     public ResponseEntity getAll() {
         List<User> users = userService.getAll();
-        if (users == null) {
+        if (users.isEmpty()) {
             return ResponseEntity.noContent().build();
         }
         List<UserDto> userDtoList = users.stream().map(UserDto::toUserDto).collect(Collectors.toList());
@@ -44,7 +44,7 @@ public class AdminUserRestControllerV1 {
     }
 
     @PutMapping
-    public ResponseEntity updateSkill(@RequestBody UserDto userDto) {
+    public ResponseEntity updateUser(@RequestBody UserDto userDto) {
         User user = userService.findById(userDto.getId());
         if (user == null) {
             return ResponseEntity.badRequest().body("User with id: " + userDto.getId() + " not exist.");
@@ -55,7 +55,7 @@ public class AdminUserRestControllerV1 {
     }
 
     @DeleteMapping(value = "/{id}")
-    public ResponseEntity deleteSkill(@PathVariable("id") Long id) {
+    public ResponseEntity deleteUser(@PathVariable("id") Long id) {
         User user = userService.findById(id);
         if (user == null) {
             return ResponseEntity.badRequest().body("User with id: " + id + " not exist.");

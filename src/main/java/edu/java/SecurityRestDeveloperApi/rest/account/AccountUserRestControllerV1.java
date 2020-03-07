@@ -24,7 +24,7 @@ public class AccountUserRestControllerV1 {
     @GetMapping
     public ResponseEntity getAll() {
         List<Account> accounts = accountService.getAll();
-        if (accounts == null) {
+        if (accounts.isEmpty()) {
             return ResponseEntity.noContent().build();
         }
         List<UserAccountDto> accountsDto = accounts.stream().map(UserAccountDto::toAccountDto).collect(Collectors.toList());
